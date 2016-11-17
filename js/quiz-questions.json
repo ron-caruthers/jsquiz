@@ -1,0 +1,62 @@
+[
+    {
+        "question": "Who is Prime Minister of the United Kingdom?",
+        "choices": [
+            "David Cameron",
+            "Gordon Brown",
+            "Winston Churchill",
+            "Tony Blair"
+        ],
+        "correctAnswer": 0
+    },
+   {
+        "question": "What civilization built the pyramids?",
+        "choices": [
+            "Sumeria",
+            "Persia",
+            "Rome",
+            "Egypt"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "question": "Who is President of the United States?",
+        "choices": [
+            "Bill Murray",
+            "Gordon Ramsay",
+            "Winston Churchill",
+            "Barack Obama"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "question": "Who wrote the Iliad?",
+        "choices": [
+            "Aristotle",
+            "Homer",
+            "Socrates",
+            "Pythagoras"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "question": "Who wrote the Odyssey?",
+        "choices": [
+            "Homer",
+            "Hamurrabi",
+            "Cicero",
+            "Voltaire"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "question": "Who is Prime Minister of Australia?",
+        "choices": [
+            "David Cameron",
+            "Malcom Turnbull",
+            "Abraham Lincoln",
+            "It doesn't matter"
+        ],
+        "correctAnswer": 1
+    }
+]

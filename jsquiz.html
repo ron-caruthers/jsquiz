@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>jsQuiz</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/build/main.css">
+<!-- Latest compiled and minified JavaScript -->
+<!-- script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+</head>
+<body>
+    <section class="quiz col-xs-12">
+        <div class="container-fluid">
+            <div class="row">
+                <h1>Simple JavaScript Quiz</h1>
+                <h2 class="start-heading">Click below to begin.</h2>
+                <div class="quiz-questions col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10">
+                    <!-- Quiz questions populate this div: .quiz-q -->
+                    <div class="quiz-q col-xs-offset-0 col-xs-12"></div>
+                    <!-- Quiz choices populate this div: .quiz-c -->
+                    <div class="quiz-c col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10"></div>
+                </div>
+            </div>
+            <div id="quiz_start" class="row">
+                <div class="col-xs-offset-0 col-xs-12 text-center">
+                    <button class="btn btn-default">Start Quiz</button>
+                </div>
+            </div>
+            <div class="row">
+                <div id="quiz_buttons" class="quiz-buttons btn-group btn-group-sm col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-6" role="group" aria-label="...">
+                    <button id="quiz_back" class="btn btn-default">Previous</button>
+                    <button id="quiz_submit" class="btn btn-default">Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="notifications" class="col-xs-offset-0 col-xs-12 text-center"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-offset-0 col-xs-12 text-center">
+                    <button id="quiz_restart" class="pull-right btn btn-link btn-sm">Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- <script src="js/quiz-questions.json" type="text/javascript"></script> -->
+<script src="js/script_c.js" type="text/javascript"></script>
+</body>
+</html>
+
