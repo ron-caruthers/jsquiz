@@ -34,8 +34,6 @@
                 ? this.scores[activeQ].user_ans
                 : 'no scores';
 
-            console.log('scores[activeQ]: ' + prevAns);
-
             // Print the Question
             var newQ = document.createElement("div");
             newQ.setAttribute('class', 'question');
@@ -52,10 +50,34 @@
                     qOptions += '<li><div class="checkbox"><label><input type="radio" name="q-' + activeQ + '" value="' + option + '" /> ' + option + '</label></div></li>';
                 } else {
                     if (option === prevAns) {
-                        qOptions += '<li><div class="checkbox"><label><input type="radio" name="q-' + activeQ + '" value="' + prevAns + '" checked=checked /> ' + option + '</label></div></li>';
+                        qOptions += '<li><div class="checkbox"><label><input type="radio" name="q-' + activeQ + '" value="' + prevAns + '" checked=checked /> ' + prevAns + '</label></div></li>';
                     } else {
                         qOptions += '<li><div class="checkbox"><label><input type="radio" name="q-' + activeQ + '" value="' + option + '" /> ' + option + '</label></div></li>';
                     }
+                }
+            });
+
+            document.getElementsByClassName("options")[0].innerHTML = '<ol>' + qOptions + '</ol>';
+        },
+        back_to_qandas: function (activeQ, userAnswer) {
+            var qOptions = "";
+
+            // Print the Question
+            var newQ = document.createElement("div");
+            newQ.setAttribute('class', 'question');
+            document.getElementsByClassName("quiz-q")[0].appendChild(newQ);
+            document.getElementsByClassName("question")[0].innerHTML = '<h3>[ Q: ' + this.activeQh(activeQ) + ' of ' + this.numQs + ' ] ' + this.questions[activeQ].question + '</h3>';
+
+            // Print the Choices
+            var newOpts = document.createElement("div");
+            newOpts.setAttribute('class', 'options');
+            document.getElementsByClassName("quiz-c")[0].appendChild(newOpts);
+
+            this.questions[activeQ].choices.forEach(function (option) {
+                if (option === userAnswer) {
+                    qOptions += '<li><div class="checkbox"><label><input type="radio" name="q-' + activeQ + '" value="' + userAnswer + '" checked=checked /> ' + userAnswer + '</label></div></li>';
+                } else {
+                    qOptions += '<li><div class="checkbox"><label><input type="radio" name="q-' + activeQ + '" value="' + option + '" /> ' + option + '</label></div></li>';
                 }
             });
 
@@ -97,24 +119,12 @@
                 right_wrong: rightWrong
             };
             if (this.scores.length >= activQ) {
-                // console.log('this.scores.length >= activQ');
-                this.scores.splice(activQ, 1, score);
-                console.log('spliced scores: ' + score);
+                this.scores.splice(compareQ, 1, score);
             } else {
-                console.log('this.scores.length < activQ');
                 this.scores.push(score);
-                // console.log('pushed score: ' + [score.q_num, score.user_ans, score.correct_ans, score.right_wrong]);
             }
-            console.log('this.scores: ');
-            this.scores.forEach(function (score) {
-                console.log(score);
-            });
-            console.log('activeQ = ' + activQ);
-            console.log('compareQ = ' + compareQ);
-            console.log('previous score Qnumber = ' + this.scores[compareQ].q_num);
         },
         next: function (activeQ, userAns) {
-
             var compareQ = activeQ - 1;
             this.compare(compareQ, userAns);
 
@@ -126,9 +136,9 @@
             }
         },
         back: function (activeQ) {
+            var backUserAnswer = this.scores[activeQ].user_ans;
             this.empty();
-            this.qandas(activeQ);
-            // this.scores.pop();
+            this.back_to_qandas(activeQ, backUserAnswer);
         },
         finish: function () {
             var qScore;
