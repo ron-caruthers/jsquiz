@@ -5,7 +5,7 @@
     function loadJSON(callback) {
         var getQuestions = new XMLHttpRequest();
         getQuestions.overrideMimeType("application/json");
-        getQuestions.open('GET', 'http://127.0.0.1:8080/js/quiz-questions.json', true);
+        getQuestions.open('GET', 'js/quiz-questions.json', true);
         getQuestions.onreadystatechange = function () {
             if (getQuestions.readyState === 4 && getQuestions.status === 200) {
                 callback(getQuestions.responseText);
